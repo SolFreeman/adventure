@@ -44,6 +44,13 @@ jQuery(document).ready(function ($) {
 	openDropdown();
 	resizeBlock();
 	subMenuNavigation();
+	addClass();
+
+	$(window).on('beforeunload', function () {
+		if ($(window).scrollTop() === 0) {
+			$('.main-header').removeClass('sticky');
+		}
+	});
 	$(".js-select2").select2({
 		closeOnSelect: false,
 		placeholder: "Комплектація",
@@ -80,21 +87,31 @@ jQuery(document).ready(function ($) {
 		$('.choose-menu').removeClass('active');
 	});
 
-	$('ul.mini-tabs li').click(function() {
+	$('ul.mini-tabs li').click(function () {
 		var photoBox = $(this).find('.photo-box');
-		
-		// Проверяем, открыт ли уже photo-box
+
 		if (photoBox.is(':visible')) {
-		  // Если открыт, скрываем его с эффектом слайда вверх
-		  photoBox.slideUp();
+			photoBox.slideUp();
 		} else {
-		  // Если закрыт, скрываем все остальные открытые photo-box
-		  $('.photo-box').slideUp();
-		  
-		  // Затем открываем текущий photo-box с эффектом слайда вниз
-		  photoBox.slideDown();
+			$('.photo-box').slideUp();
+			photoBox.slideDown();
 		}
-	  });
+	});
+
+	function addClass() {
+		var mainHeader = $('.main-header');
+		var headerOffset = mainHeader.offset().top;
+
+		$(window).on('load scroll', function () {
+			var scrollTop = $(window).scrollTop();
+
+			if (scrollTop >= headerOffset) {
+				mainHeader.addClass('sticky');
+			} else {
+				mainHeader.removeClass('sticky');
+			}
+		});
+	}
 
 
 

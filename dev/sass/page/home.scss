@@ -90,7 +90,7 @@
 	}
 
 	.bottom-block {
-		background: url('./assets/img/wave.svg') no-repeat;
+		background: url('./assets/img/wave3.png') no-repeat;
 		background-position: 50% 100%;
 		background-size: cover;
 		padding: 15px 0;
@@ -2383,7 +2383,7 @@ span.select2-selection__clear {
 				max-width: 212px;
 
 				@include media('>=desktop') {
-					max-width: none;
+					max-width: 440px;
 				}
 			}
 
@@ -2579,6 +2579,10 @@ span.select2-selection__clear {
 					text-align: center;
 					position: relative;
 					text-decoration: none;
+
+					&:hover {
+						text-decoration: none;
+					}
 				}
 			}
 		}
@@ -2638,6 +2642,15 @@ span.select2-selection__clear {
 
 		h4 {
 			margin: 0 0 16px;
+		}
+
+		a:not(.btn) {
+			color: $secondary-color;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 

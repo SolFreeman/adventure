@@ -144,10 +144,10 @@ address {
     transform: translate(-50%, -50%); }
     @media (min-width: 768px) {
       .muve-top:before {
-        font-size: 38px; } }
+        font-size: 30px; } }
   @media (min-width: 768px) {
     .muve-top {
-      padding: 50px; } }
+      padding: 30px; } }
   .muve-top:hover {
     background: #33535F; }
 
@@ -1034,7 +1034,12 @@ input:checked + label:before {
           font-size: 10px; }
   .header .main-header {
     padding: 20px 0;
-    background: #fff; }
+    background: #fff;
+    box-shadow: 0px 16px 32px rgba(46, 4, 4, 0.08), 0px 6px 10px rgba(0, 0, 0, 0.25);
+    width: 100%; }
+    .header .main-header.sticky {
+      position: fixed;
+      top: 0; }
   .header .container {
     display: flex;
     flex-wrap: wrap;
@@ -1918,6 +1923,8 @@ blockquote {
   color: #fff;
   position: relative;
   margin-top: 64px; }
+  .footer a {
+    text-decoration: none; }
   @media (min-width: 768px) {
     .footer {
       padding: 87px 0 0;
@@ -2289,7 +2296,7 @@ $screen-large 1280px
         text-align: left;
         font-size: 50px; } }
   .main-banner .bottom-block {
-    background: url("./assets/img/wave.svg") no-repeat;
+    background: url("./assets/img/wave3.png") no-repeat;
     background-position: 50% 100%;
     background-size: cover;
     padding: 15px 0;
@@ -3958,7 +3965,7 @@ span.select2-selection__clear {
         max-width: 212px; }
         @media (min-width: 1024px) {
           .fingertips-area .tabs .content-tabs .img-holder {
-            max-width: none; } }
+            max-width: 440px; } }
       @media (min-width: 1024px) {
         .fingertips-area .tabs .content-tabs {
           width: 50%; } }
@@ -4096,6 +4103,8 @@ span.select2-selection__clear {
       text-align: center;
       position: relative;
       text-decoration: none; }
+      .secrets .secrets-slider.short .slide a:hover {
+        text-decoration: none; }
     .secrets .secrets-slider .place {
       color: #6B7A8F;
       font-size: 16px; }
@@ -4134,6 +4143,11 @@ span.select2-selection__clear {
         top: -65px; } }
     .secrets .slide h4 {
       margin: 0 0 16px; }
+    .secrets .slide a:not(.btn) {
+      color: #33535F;
+      text-decoration: none; }
+      .secrets .slide a:not(.btn):hover {
+        text-decoration: underline; }
   .secrets .img-holder {
     border-radius: 30px 30px 0 0;
     overflow: hidden;
@@ -4976,8 +4990,7 @@ span.select2-selection__clear {
   position: absolute;
   transition: all .15s ease-in-out;
   top: 56px;
-  left: -57px;
-  opacity: 0; }
+  left: -57px; }
 
 .about .steps {
   padding: 75px 0; }
@@ -5019,7 +5032,7 @@ span.select2-selection__clear {
       top: 0;
       transition: all .15s ease-in-out;
       opacity: 0; }
-    .card-list .card-item:hover .card-label, .card-list .card-item:hover:before {
+    .card-list .card-item:hover:before {
       opacity: 1; }
     .card-list .card-item .price {
       font-size: 50px;
