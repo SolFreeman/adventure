@@ -229,15 +229,15 @@ img {
 /*3*/
 
 ol {
-	padding: 0 0 0 40px;
 	margin: 0;
+	padding: 0;
 	counter-reset: li;
 
 	li {
 		list-style: none;
 		list-style-position: outside;
 		position: relative;
-		padding-left: 30px;
+		padding-left: 36px;
 		margin-bottom: 18px;
 
 		&:before {
@@ -261,7 +261,7 @@ ul {
 	padding: 0;
 
 	li {
-		color: #222;
+		color: $grey;
 		padding-left: 36px;
 		margin-bottom: 18px;
 		position: relative;
@@ -274,7 +274,7 @@ ul {
 			width: 10px;
 			height: 10px;
 			left: 0;
-			top: 10px;
+			top: 8px;
 			display: inline-block;
 		}
 	}
@@ -341,6 +341,7 @@ h6,
 h1,
 .title_1 {
 	font-size: 50px;
+	font-weight: 500;
 	font-family: $font-secondary;
 }
 
@@ -832,7 +833,7 @@ input:checked+label {
 	}
 
 	a {
-		margin-right: 25px;
+		margin-right: 0;
 		color: $secondary-color;
 		text-decoration: none;
 
@@ -841,7 +842,7 @@ input:checked+label {
 		}
 
 		& + span {
-			margin-left: 25px;
+			margin-left: 0;
 		}
 	}
 }
