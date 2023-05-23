@@ -87,17 +87,51 @@ jQuery(document).ready(function ($) {
 		$('.choose-menu').removeClass('active');
 	});
 
-	$('ul.mini-tabs li').click(function () {
-		var photoBox = $(this).find('.photo-box');
-
-		if (photoBox.is(':visible')) {
-			photoBox.slideUp();
-		} else {
+	function miniTabs() {
+		var windowWidth = $(window).width();
+		var isMobile = windowWidth <= 768;
+	  
+		function togglePhotoBox() {
+		  windowWidth = $(window).width();
+		  isMobile = windowWidth <= 768;
+	  
+		  if (isMobile) {
+			$('ul.mini-tabs li').off('click').on('click', function () {
+			  var photoBox = $(this).find('.photo-box');
+	  
+			  if (photoBox.is(':visible')) {
+				photoBox.slideUp();
+			  } else {
+				$('.photo-box').slideUp();
+				photoBox.slideDown();
+			  }
+			});
+	  
+			// Открываем первый photoBox по умолчанию
+			$('ul.mini-tabs li:first-child .photo-box').slideDown();
+		  } else {
+			$('ul.mini-tabs li').off('click');
 			$('.photo-box').slideUp();
-			photoBox.slideDown();
+		  }
 		}
-	});
+	  
+		// Инициализация при загрузке страницы
+		togglePhotoBox();
+	  
+		// Обработчик события resize для изменения размеров окна браузера
+		$(window).resize(function () {
+		  var newWindowWidth = $(window).width();
+		  var newIsMobile = newWindowWidth <= 768;
+	  
+		  if (isMobile !== newIsMobile) {
+			togglePhotoBox();
+		  }
+		});
+	  }
+	  
 
+	miniTabs();
+	
 	function addClass() {
 		var mainHeader = $('.main-header');
 		var headerOffset = mainHeader.offset().top;
@@ -205,7 +239,7 @@ jQuery(document).ready(function ($) {
 				breakpoint: 768,
 				settings: {
 					arrows: false,
-					slidesToShow: 3
+					slidesToShow: 1
 				},
 			}
 		]

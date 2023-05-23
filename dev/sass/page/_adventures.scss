@@ -736,20 +736,21 @@
         width: 421px;
         height: 307px;
         left: 0;
-        bottom: 10%;
+        bottom: -70px;
         z-index: -1;
         background-size: contain;
 
         @include media('>=tablet') {
             width: 842px;
             height: 614px;
+            bottom: 10%;
         }
     }
 
     .tabs {
         width: 100%;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         margin-bottom: 25px;
 
         @include media('>=tablet') {
@@ -939,7 +940,7 @@
     }
 
     .slick-list {
-        padding: 20px 60px !important;
+        padding: 106px 60px 50px!important;
 
         @include media('>=tablet') {
             padding: 0 !important;
@@ -990,8 +991,45 @@
             font-weight: 600;
             color: $primary-color;
             margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+                background-color: $white;
+                font-size: 16px;
+                color: $primary-color;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 20px;
+
+                @include media('>=tablet') {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 24px;
+                }
+            }
+        }
+
+        .slide-text {
             opacity: 0;
+            visibility: hidden;
             transition: all .3s ease-in-out;
+            text-align: center;
+            color: $white;
+            
+            p {
+                // min-height: 155px;
+
+                @include media('>=tablet') {
+                    min-height: auto;
+                }
+            }
+
         }
 
         .img-holder {
@@ -1012,8 +1050,9 @@
                 margin-bottom: 0;
             }
 
-            .title {
+            .slide-text {
                 opacity: 1;
+                visibility: visible;
             }
         }
     }

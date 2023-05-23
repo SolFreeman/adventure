@@ -723,6 +723,7 @@
 
 		@include media('>=tablet') {
 			color: $grey;
+			font-weight: 500;
 		}
 	}
 

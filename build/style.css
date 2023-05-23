@@ -1596,7 +1596,8 @@ input:checked + label:before {
     transition: color .2s ease-in-out; }
     @media (min-width: 768px) {
       .nav a {
-        color: #6B7A8F; } }
+        color: #6B7A8F;
+        font-weight: 500; } }
   .nav .sub-menu {
     text-align: left;
     padding: 0;
@@ -1968,7 +1969,7 @@ blockquote {
   line-height: 1.5;
   margin-bottom: 50px;
   flex-direction: column;
-  color: #17282F; }
+  color: #6B7A8F; }
   blockquote:before {
     content: "";
     display: block;
@@ -5424,8 +5425,19 @@ span.select2-selection__clear {
     .mini-tabs li:hover span, .mini-tabs li.active span {
       background: #7DF4CD;
       color: #33535F; }
-    .mini-tabs li:hover.active .photo-box, .mini-tabs li.active.active .photo-box {
-      display: block; }
+    @media (min-width: 1024px) {
+      .mini-tabs li:hover .photo-box, .mini-tabs li.active .photo-box {
+        opacity: 1;
+        visibility: visible;
+        display: block !important; } }
+    @media (min-width: 1024px) {
+      .mini-tabs li:first-child span {
+        background: #7DF4CD;
+        color: #33535F; }
+      .mini-tabs li:first-child .photo-box {
+        opacity: 1;
+        visibility: visible;
+        display: block !important; } }
     @media (min-width: 1024px) {
       .mini-tabs li {
         font-size: 24px; }
@@ -5441,7 +5453,10 @@ span.select2-selection__clear {
       display: none; }
       @media (min-width: 1024px) {
         .mini-tabs li .photo-box {
-          position: absolute; } }
+          position: absolute;
+          display: block;
+          visibility: hidden;
+          opacity: 0; } }
 
 .next-adventure {
   display: flex;
@@ -6208,17 +6223,18 @@ span.select2-selection__clear {
     width: 421px;
     height: 307px;
     left: 0;
-    bottom: 10%;
+    bottom: -70px;
     z-index: -1;
     background-size: contain; }
     @media (min-width: 768px) {
       .detail-info:before {
         width: 842px;
-        height: 614px; } }
+        height: 614px;
+        bottom: 10%; } }
   .detail-info .tabs {
     width: 100%;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin-bottom: 25px; }
     @media (min-width: 768px) {
       .detail-info .tabs {
@@ -6346,7 +6362,7 @@ span.select2-selection__clear {
     .gameplay-area {
       padding: 80px 90px 120px; } }
   .gameplay-area .slick-list {
-    padding: 20px 60px !important; }
+    padding: 106px 60px 50px !important; }
     @media (min-width: 768px) {
       .gameplay-area .slick-list {
         padding: 0 !important; } }
@@ -6385,8 +6401,34 @@ span.select2-selection__clear {
       font-weight: 600;
       color: #FF7E00;
       margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .gameplay-area .slide .title span {
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        background-color: #fff;
+        font-size: 16px;
+        color: #FF7E00;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px; }
+        @media (min-width: 768px) {
+          .gameplay-area .slide .title span {
+            width: 50px;
+            height: 50px;
+            font-size: 24px; } }
+    .gameplay-area .slide .slide-text {
       opacity: 0;
-      transition: all .3s ease-in-out; }
+      visibility: hidden;
+      transition: all .3s ease-in-out;
+      text-align: center;
+      color: #fff; }
+      @media (min-width: 768px) {
+        .gameplay-area .slide .slide-text p {
+          min-height: auto; } }
     .gameplay-area .slide .img-holder {
       max-width: 302px;
       transition: all .3s ease-in-out;
@@ -6399,8 +6441,9 @@ span.select2-selection__clear {
       .gameplay-area .slide.slick-center .img-holder {
         max-width: 383px;
         margin-bottom: 0; }
-      .gameplay-area .slide.slick-center .title {
-        opacity: 1; }
+      .gameplay-area .slide.slick-center .slide-text {
+        opacity: 1;
+        visibility: visible; }
   .gameplay-area .slick-dots {
     bottom: -40px; }
   .gameplay-area .slick-arrow {
