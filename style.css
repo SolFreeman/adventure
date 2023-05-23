@@ -5909,9 +5909,9 @@ span.select2-selection__clear {
       width: 100%;
       border-radius: 30px;
       overflow: hidden; }
-    .happy-slider .slide.slick-current a {
+    .happy-slider .slide:hover a {
       position: relative; }
-      .happy-slider .slide.slick-current a:before {
+      .happy-slider .slide:hover a:before {
         position: absolute;
         content: '\e908';
         font-family: 'icomoon';
@@ -5922,7 +5922,7 @@ span.select2-selection__clear {
         bottom: 15px;
         transition: all .15s ease-in-out;
         z-index: 1; }
-      .happy-slider .slide.slick-current a:after {
+      .happy-slider .slide:hover a:after {
         position: absolute;
         content: '';
         width: 100%;
