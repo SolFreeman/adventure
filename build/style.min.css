@@ -2380,7 +2380,11 @@ $screen-large 1280px
     @media (min-width: 768px) {
       .main-banner .banner-holder {
         flex-direction: row;
-        padding: 0 0 45px 15px; } }
+        padding: 0 0 45px 15px;
+        align-items: flex-end; } }
+    @media (min-width: 1024px) {
+      .main-banner .banner-holder {
+        align-items: center; } }
   .main-banner .col {
     width: 100%;
     display: flex;
@@ -2402,12 +2406,12 @@ $screen-large 1280px
     max-width: 600px;
     color: #fff;
     font-size: 24px; }
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       .main-banner .text-holder {
         font-size: 36px; } }
   .main-banner p {
     margin-bottom: 36px; }
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       .main-banner p {
         margin-bottom: 72px; } }
   .main-banner .banner-text {
@@ -2419,7 +2423,9 @@ $screen-large 1280px
     line-height: 1.5; }
     @media (min-width: 768px) {
       .main-banner .banner-text {
-        text-align: left;
+        text-align: left; } }
+    @media (min-width: 1024px) {
+      .main-banner .banner-text {
         font-size: 50px; } }
   .main-banner .bottom-block {
     background: url(./assets/img/wave3.png) no-repeat;
@@ -2440,7 +2446,12 @@ $screen-large 1280px
     padding: 30px 0 0; }
     @media (min-width: 768px) {
       .main-banner .advantages-list {
-        flex-wrap: nowrap; } }
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin-top: 30px; } }
+    @media (min-width: 1024px) {
+      .main-banner .advantages-list {
+        margin-top: 0; } }
     .main-banner .advantages-list li {
       color: #33535F;
       font-weight: 600;
@@ -2457,17 +2468,22 @@ $screen-large 1280px
       @media (min-width: 768px) {
         .main-banner .advantages-list li {
           width: auto;
-          margin: 44px 10% 10px 0;
-          font-size: 24px;
+          margin: 44px 18px 10px 0;
           flex-direction: row;
           text-align: left; } }
+      @media (min-width: 1024px) {
+        .main-banner .advantages-list li {
+          font-size: 24px;
+          max-width: none; } }
     .main-banner .advantages-list .icon {
       margin: 0 0 5px;
       max-width: 55px; }
       @media (min-width: 768px) {
         .main-banner .advantages-list .icon {
-          max-width: none;
           margin: 0 17px 0 0; } }
+      @media (min-width: 1024px) {
+        .main-banner .advantages-list .icon {
+          max-width: none; } }
     .main-banner .advantages-list span {
       max-width: 140px;
       width: 100%; }
@@ -6383,7 +6399,7 @@ span.select2-selection__clear {
     .gameplay-area .slide .title {
       font-weight: 600;
       color: #FF7E00;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       justify-content: center; }
@@ -6411,9 +6427,11 @@ span.select2-selection__clear {
       color: #fff; }
       @media (min-width: 768px) {
         .gameplay-area .slide .slide-text p {
-          min-height: auto; } }
+          min-height: auto;
+          font-size: 16px;
+          min-height: 96px; } }
     .gameplay-area .slide .img-holder {
-      max-width: 302px;
+      max-width: 277px;
       transition: all .3s ease-in-out;
       margin-bottom: 30px; }
     .gameplay-area .slide.slick-center {

@@ -31,6 +31,11 @@
 		@include media('>=tablet') {
 			flex-direction: row;
 			padding: 0 0 45px 15px;
+			align-items: flex-end;
+		}
+
+		@include media('>=desktop') {
+			align-items: center;
 		}
 	}
 
@@ -64,6 +69,10 @@
 		font-size: 24px;
 
 		@include media('>=tablet') {
+			// font-size: 36px;
+		}
+
+		@include media('>=desktop') {
 			font-size: 36px;
 		}
 	}
@@ -72,6 +81,9 @@
 		margin-bottom: 36px;
 
 		@include media('>=tablet') {
+		}
+		
+		@include media('>=desktop') {
 			margin-bottom: 72px;
 		}
 	}
@@ -86,6 +98,10 @@
 
 		@include media('>=tablet') {
 			text-align: left;
+			// font-size: 50px;
+		}
+
+		@include media('>=desktop') {
 			font-size: 50px;
 		}
 	}
@@ -114,6 +130,12 @@
 
 		@include media('>=tablet') {
 			flex-wrap: nowrap;
+			justify-content: space-between;
+			margin-top: 30px;
+		}
+
+		@include media('>=desktop') {
+			margin-top: 0;
 		}
 
 		li {
@@ -134,10 +156,14 @@
 
 			@include media('>=tablet') {
 				width: auto;
-				margin: 44px 10% 10px 0;
-				font-size: 24px;
+				margin: 44px 18px 10px 0;
 				flex-direction: row;
 				text-align: left;
+			}
+			
+			@include media('>=desktop') {
+				font-size: 24px;
+				max-width: none;
 			}
 		}
 
@@ -146,8 +172,11 @@
 			max-width: 55px;
 
 			@include media('>=tablet') {
-				max-width: none;
 				margin: 0 17px 0 0;
+			}
+			
+			@include media('>=desktop') {
+				max-width: none;
 			}
 		}
 

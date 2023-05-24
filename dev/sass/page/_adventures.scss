@@ -990,7 +990,7 @@
         .title {
             font-weight: 600;
             color: $primary-color;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1023,17 +1023,17 @@
             color: $white;
             
             p {
-                // min-height: 155px;
-
                 @include media('>=tablet') {
                     min-height: auto;
+                    font-size: 16px;
+                    min-height: 96px;
                 }
             }
 
         }
 
         .img-holder {
-            max-width: 302px;
+            max-width: 277px;
             transition: all .3s ease-in-out;
             margin-bottom: 30px;
         }
