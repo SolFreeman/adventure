@@ -2054,7 +2054,7 @@ blockquote {
 .footer {
   background: #33535F;
   padding: 47px 0 0;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
   position: relative;
   margin-top: 100px; }
@@ -2388,7 +2388,8 @@ $screen-large 1280px
     .main-banner {
       padding-top: 77px;
       margin: 0 0 120px;
-      background: #33535F url("./assets/img/mainback.jpg") no-repeat; } }
+      background: #33535F url("./assets/img/mainback.jpg") no-repeat;
+      background-size: contain; } }
   .main-banner .banner-holder {
     display: flex;
     flex-direction: column;
@@ -2424,12 +2425,12 @@ $screen-large 1280px
     max-width: 600px;
     color: #fff;
     font-size: 24px; }
-    @media (min-width: 1024px) {
+    @media (min-width: 1180px) {
       .main-banner .text-holder {
         font-size: 36px; } }
   .main-banner p {
     margin-bottom: 36px; }
-    @media (min-width: 1024px) {
+    @media (min-width: 1180px) {
       .main-banner p {
         margin-bottom: 72px; } }
   .main-banner .banner-text {
@@ -2442,7 +2443,7 @@ $screen-large 1280px
     @media (min-width: 768px) {
       .main-banner .banner-text {
         text-align: left; } }
-    @media (min-width: 1024px) {
+    @media (min-width: 1180px) {
       .main-banner .banner-text {
         font-size: 50px; } }
   .main-banner .bottom-block {
@@ -2928,7 +2929,13 @@ $screen-large 1280px
   padding: 45px 0 0; }
   @media (min-width: 768px) {
     .how-it-works {
-      flex-direction: row; } }
+      align-items: center; } }
+  @media (min-width: 1024px) {
+    .how-it-works {
+      flex-direction: row;
+      align-items: flex-start;
+      flex-direction: row;
+      align-items: flex-start; } }
   .how-it-works .img-holder {
     margin: 0 0 24px 0;
     max-width: 774px;
@@ -2939,9 +2946,11 @@ $screen-large 1280px
     position: relative; }
     @media (min-width: 768px) {
       .how-it-works .img-holder {
-        margin: 0 87px 0 0;
         padding: 15px;
         border-radius: 38px; } }
+    @media (min-width: 1024px) {
+      .how-it-works .img-holder {
+        margin: 0 87px 0 0; } }
     .how-it-works .img-holder img {
       border-radius: 28px; }
     .how-it-works .img-holder a {
@@ -2971,10 +2980,12 @@ $screen-large 1280px
           height: 91px;
           font-size: 28px; } }
   .how-it-works .text {
-    max-width: 505px;
     padding: 10px 0 0;
     text-align: center; }
     @media (min-width: 768px) {
+      .how-it-works .text {
+        max-width: 505px; } }
+    @media (min-width: 1024px) {
       .how-it-works .text {
         text-align: left; }
         .how-it-works .text p {
@@ -2992,9 +3003,11 @@ $screen-large 1280px
     margin-bottom: 20px; }
     @media (min-width: 768px) {
       .select-city .city-list {
-        padding: 20px 50px 0;
         margin-bottom: 120px;
         justify-content: space-between; } }
+    @media (min-width: 1024px) {
+      .select-city .city-list {
+        padding: 20px 50px 0; } }
   .select-city li {
     padding: 0;
     margin: 0 50px 50px;
