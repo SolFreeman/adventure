@@ -1389,7 +1389,8 @@ input:checked + label:before {
     @media (min-width: 768px) {
       .choose-menu .open-link {
         color: #6B7A8F;
-        font-size: 16px; } }
+        font-size: 16px;
+        font-weight: 500; } }
   .choose-menu .city-holder {
     max-width: 1410px;
     margin: 0 auto;
