@@ -1501,3 +1501,20 @@
 		}
 	}
 }
+
+.btn-checkout {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	flex-direction: row-reverse;
+
+	&:after {
+		position: static;
+		font-size: 24px;
+		content: '\e90f';
+		font-family: 'icomoon';
+		margin-right: 20px;
+		color: $white;
+		font-weight: 400;
+	}
+}

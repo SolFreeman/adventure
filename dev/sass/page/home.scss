@@ -1309,7 +1309,7 @@
 	@include media('>=tablet') {
 		color: $white;
 		border-radius: 30px;
-		padding: 135px 15px;
+		padding: 111px 15px;
 
 		&:before {
 			position: absolute;
@@ -1322,7 +1322,11 @@
 		}
 	}
 
-	@include media('<=tablet') {
+	@include media('>=desktop') {
+		padding: 135px 15px;
+	}
+
+	@include media('<tablet') {
 		background: none !important;
 	}
 

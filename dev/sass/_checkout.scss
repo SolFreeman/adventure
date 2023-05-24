@@ -4,6 +4,8 @@
     width: 100%;
     height: 52px;
     margin-bottom: 30px;
+    max-width: 100%;
+    border: none;
 
 }
 
@@ -92,6 +94,7 @@
         color: $grey-dark;
         display: block;
         margin: 0 0 24px;
+        width: 100%;
     }
 }
 
@@ -194,7 +197,8 @@ table.wccpf_fields_table td.wccpf_value select {
 table.wccpf_fields_table td.wccpf_value select,
 table.wccpf_fields_table td.wccpf_value input[type=email],
 table.wccpf_fields_table td.wccpf_value input[type=text] {
-    border: 1px dashed $grey-dark;
+    border: 2px dashed $grey;
+    border-radius: 8px;
     padding: 20px;
     outline: none;
 
@@ -246,7 +250,7 @@ table.wccpf_fields_table td.wccpf_value select {
 
     .input-text {
         width: 100%;
-        border: 1px dashed #6B7A8F;
+        border: 2px dashed $grey;
         border-radius: 8px;
         padding: 15px;
 
@@ -274,6 +278,31 @@ table.wccpf_fields_table td.wccpf_value select {
 
     .img-holder {
         margin: 0 0 80px;
+    }
+
+}
+
+.product-gallery-summary form.cart {
+    .btn-holder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.product-gallery-summary .botiga-single-addtocart-wrapper .button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+
+    &:before {
+        font-family: 'icomoon';
+        content: '\e90f';
+        margin-right: 20px;
+        font-size: 24px;
+        font-weight: 400;
     }
 }
 
@@ -402,6 +431,12 @@ dl.variation dd {
     @include media('>=tablet') {
         font-size: 20px;
     }
+}
+
+dl.variation dt {
+    font-weight: 500;
+    color: $grey-dark;
+    margin-right: 5px;
 }
 
 .product-total ins {
@@ -535,4 +570,8 @@ dl.variation dd {
             }
         }
     }
+}
+
+.woocommerce {
+    margin: 0 0 80px;
 }
