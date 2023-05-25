@@ -2859,9 +2859,12 @@ $screen-large 1280px
     @media (min-width: 768px) {
       .steps .steps-list {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: start;
         padding: 40px 0 0; } }
+    @media (min-width: 1024px) {
+      .steps .steps-list {
+        justify-content: space-between; } }
   .steps .item-list {
     max-width: 255px;
     width: 100%;
@@ -4191,8 +4194,7 @@ span.select2-selection__clear {
     overflow: hidden;
     display: flex;
     padding: 0 10px;
-    align-items: center;
-    max-height: 110px; }
+    align-items: center; }
   .review-slider .slick-dots {
     bottom: 15px; }
 
@@ -4221,13 +4223,14 @@ span.select2-selection__clear {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    justify-content: center; }
+    justify-content: center;
+    margin: 0 0 90px; }
     @media (min-width: 768px) {
       .secrets .secrets-slider {
-        padding: 100px 0 0;
         margin: 0 0 25px; } }
     @media (min-width: 1384px) {
       .secrets .secrets-slider {
+        padding: 100px 0 0;
         justify-content: flex-start; } }
     .secrets .secrets-slider .slick-list {
       padding: 0 30px; }
@@ -4254,7 +4257,7 @@ span.select2-selection__clear {
     border-radius: 30px;
     box-shadow: 0px 20px 100px rgba(66, 71, 91, 0.12);
     background: #fff;
-    margin: 44px 24px 90px;
+    margin: 44px 24px 0;
     transition: transform .15s ease-in-out; }
     .secrets .slide:before {
       position: absolute;
@@ -4285,6 +4288,10 @@ span.select2-selection__clear {
       text-decoration: none; }
       .secrets .slide a:not(.btn):hover {
         text-decoration: underline; }
+  .secrets .js-secrets-slider {
+    margin: 0; }
+    .secrets .js-secrets-slider .slide {
+      margin-bottom: 90px; }
   .secrets .img-holder {
     border-radius: 30px 30px 0 0;
     overflow: hidden;
@@ -5105,6 +5112,9 @@ span.select2-selection__clear {
     flex-wrap: wrap; }
     @media (min-width: 768px) {
       .category .search-list {
+        justify-content: center; } }
+    @media (min-width: 1024px) {
+      .category .search-list {
         justify-content: start; } }
     .category .search-list .item {
       position: relative;
@@ -5513,7 +5523,8 @@ span.select2-selection__clear {
         justify-content: center;
         width: 100%; }
         .next-adventure .img-holder img {
-          max-width: 650px; } }
+          max-width: 650px;
+          width: 100%; } }
   .next-adventure .text {
     display: flex;
     flex-direction: column;
@@ -6407,6 +6418,9 @@ span.select2-selection__clear {
   margin: 0 0 100px; }
   @media (min-width: 768px) {
     .gameplay-area {
+      padding: 80px 10px 120px; } }
+  @media (min-width: 1024px) {
+    .gameplay-area {
       padding: 80px 90px 120px; } }
   .gameplay-area .slick-list {
     padding: 106px 60px 50px !important; }
@@ -6420,7 +6434,7 @@ span.select2-selection__clear {
     left: 0;
     width: 100%;
     height: 199px;
-    bottom: -100px; }
+    bottom: -101px; }
   .gameplay-area h2 {
     margin-bottom: 30px;
     color: #fff; }
@@ -6437,7 +6451,7 @@ span.select2-selection__clear {
     @media (min-width: 768px) {
       .gameplay-area .slide {
         margin: 0 10px;
-        min-height: 500px; } }
+        min-height: 800px; } }
     @media (min-width: 1220px) {
       .gameplay-area .slide {
         font-size: 24px;
@@ -6473,23 +6487,29 @@ span.select2-selection__clear {
       transition: all .3s ease-in-out;
       text-align: center;
       color: #fff; }
-      @media (min-width: 768px) {
-        .gameplay-area .slide .slide-text p {
-          min-height: auto;
-          font-size: 16px;
-          min-height: 96px; } }
+      .gameplay-area .slide .slide-text p {
+        min-height: 160px; }
+        @media (min-width: 768px) {
+          .gameplay-area .slide .slide-text p {
+            font-size: 16px;
+            min-height: 192px; } }
+        @media (min-width: 1024px) {
+          .gameplay-area .slide .slide-text p {
+            min-height: 96px; } }
     .gameplay-area .slide .img-holder {
-      max-width: 277px;
       transition: all .3s ease-in-out;
       margin-bottom: 30px; }
+      @media (min-width: 768px) {
+        .gameplay-area .slide .img-holder {
+          max-width: 250px; } }
     .gameplay-area .slide.slick-center {
-      transform: scale(1.2); }
+      transform: scale(1.1); }
       @media (min-width: 768px) {
         .gameplay-area .slide.slick-center {
-          transform: scale(1); } }
-      .gameplay-area .slide.slick-center .img-holder {
-        max-width: 383px;
-        margin-bottom: 0; }
+          transform: scale(1); }
+          .gameplay-area .slide.slick-center .img-holder {
+            max-width: 300px;
+            margin-bottom: 0; } }
       .gameplay-area .slide.slick-center .slide-text {
         opacity: 1;
         visibility: visible; }

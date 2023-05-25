@@ -645,9 +645,13 @@
 
 		@include media('>=tablet') {
 			flex-direction: row;
-			justify-content: space-between;
+			justify-content: center;
 			align-items: start;
 			padding: 40px 0 0;
+		}
+
+		@include media('>=desktop') {
+			justify-content: space-between;
 		}
 	}
 
@@ -2502,7 +2506,7 @@ span.select2-selection__clear {
 		display: flex;
 		padding: 0 10px;
 		align-items: center;
-		max-height: 110px;
+		// max-height: 110px;
 	}
 
 	.slick-dots {
@@ -2548,13 +2552,14 @@ span.select2-selection__clear {
 		flex-wrap: wrap;
 		padding: 0;
 		justify-content: center;
+		margin: 0 0 90px;
 
 		@include media('>=tablet') {
-			padding: 100px 0 0;
 			margin: 0 0 25px;
 		}
-
+		
 		@include media('>=1384px') {
+			padding: 100px 0 0;
 			justify-content: flex-start;
 		}
 
@@ -2602,7 +2607,7 @@ span.select2-selection__clear {
 		border-radius: 30px;
 		box-shadow: 0px 20px 100px rgba(66, 71, 91, 0.12);
 		background: $white;
-		margin: 44px 24px 90px;
+		margin: 44px 24px 0;
 		transition: transform .15s ease-in-out;
 
 		&:before {
@@ -2651,6 +2656,14 @@ span.select2-selection__clear {
 			&:hover {
 				text-decoration: underline;
 			}
+		}
+	}
+
+	.js-secrets-slider {
+		margin: 0;
+
+		.slide {
+			margin-bottom: 90px;
 		}
 	}
 

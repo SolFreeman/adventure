@@ -648,6 +648,10 @@
 		flex-wrap: wrap;
 
 		@include media('>=tablet') {
+			justify-content: center;
+		}
+
+		@include media('>=desktop') {
 			justify-content: start;
 		}
 
@@ -1222,6 +1226,7 @@
 
 			img {
 				max-width: 650px;
+				width: 100%;
 			}
 		}
 	}

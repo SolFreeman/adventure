@@ -936,8 +936,13 @@
     margin: 0 0 100px;
 
     @include media('>=tablet') {
+        padding: 80px 10px 120px;
+    }
+
+    @include media('>=desktop') {
         padding: 80px 90px 120px;
     }
+    
 
     .slick-list {
         padding: 106px 60px 50px!important;
@@ -954,7 +959,7 @@
         left: 0;
         width: 100%;
         height: 199px;
-        bottom: -100px;
+        bottom: -101px;
     }
 
     h2 {
@@ -977,7 +982,7 @@
 
         @include media('>=tablet') {
             margin: 0 10px;
-            min-height: 500px;
+            min-height: 800px;
         }
 
         @include media('>=1220px') {
@@ -1023,32 +1028,46 @@
             color: $white;
             
             p {
+                min-height: 160px;
+
                 @include media('>=tablet') {
-                    min-height: auto;
                     font-size: 16px;
+                    min-height: 192px;
+                }
+
+                @include media('>=desktop') {
                     min-height: 96px;
+                    
+                }
+
+                @include media('>=tablet') {
+                    
                 }
             }
 
         }
 
         .img-holder {
-            max-width: 277px;
             transition: all .3s ease-in-out;
             margin-bottom: 30px;
+            
+            @include media('>=tablet') {
+                max-width: 250px;
+            }
         }
 
         &.slick-center {
-            transform: scale(1.2);
+            transform: scale(1.1);
 
             @include media('>=tablet') {
                 transform: scale(1);
+
+                .img-holder {
+                    max-width: 300px;
+                    margin-bottom: 0;
+                }
             }
 
-            .img-holder {
-                max-width: 383px;
-                margin-bottom: 0;
-            }
 
             .slide-text {
                 opacity: 1;
