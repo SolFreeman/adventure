@@ -1859,6 +1859,7 @@ input:checked + label:before {
       display: none; }
   .paginations-btn a {
     text-decoration: none; }
+  .paginations-btn .page-btn .current,
   .paginations-btn .page-btn a {
     border-radius: 50%;
     background: #fff;
@@ -1872,12 +1873,19 @@ input:checked + label:before {
     color: #FF7E00;
     font-size: 18px;
     border: 1px solid #33535F; }
-    .paginations-btn .page-btn a:hover, .paginations-btn .page-btn a.active {
+    .paginations-btn .page-btn .current:hover, .paginations-btn .page-btn .current.active,
+    .paginations-btn .page-btn a:hover,
+    .paginations-btn .page-btn a.active {
       background-color: #FF7E00;
       color: #fff;
       border-color: transparent; }
+    .paginations-btn .page-btn .current.active,
     .paginations-btn .page-btn a.active {
       pointer-events: none; }
+  .paginations-btn .page-btn .current {
+    background-color: #FF7E00;
+    color: #fff;
+    border-color: transparent; }
   .paginations-btn .page-btn .dots {
     width: 50px;
     height: 50px;
@@ -5188,6 +5196,8 @@ span.select2-selection__clear {
       background: transparent; }
     .category-list li.in-active .btn {
       color: rgba(23, 40, 47, 0.3); }
+    .category-list li.active .btn {
+      color: #FF7E00; }
     .category-list li:before {
       display: none; }
     @media (min-width: 768px) {
@@ -6058,7 +6068,7 @@ span.select2-selection__clear {
     font-weight: 600;
     margin-bottom: 7px;
     color: #17282F; }
-  .review-box .photo-box {
+  .review-box .photo-box-review {
     max-width: 168px;
     border-radius: 50%;
     overflow: hidden;

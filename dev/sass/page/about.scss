@@ -765,6 +765,12 @@
 			}
 		}
 
+		&.active {
+			.btn {
+				color: $primary-color;
+			}
+		}
+
 		&:before {
 			display: none;
 		}
