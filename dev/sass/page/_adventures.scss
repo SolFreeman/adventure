@@ -199,6 +199,11 @@
     .title {
         color: $primary-color;
         font-weight: 600;
+        font-size: 16px;
+
+        @include media('>=tablet') {
+            font-size: 24px;
+        }
     }
 
     .text-box {

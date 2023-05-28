@@ -5914,7 +5914,11 @@ span.select2-selection__clear {
         max-width: 223px; } }
   .pro-block .title {
     color: #FF7E00;
-    font-weight: 600; }
+    font-weight: 600;
+    font-size: 16px; }
+    @media (min-width: 768px) {
+      .pro-block .title {
+        font-size: 24px; } }
   .pro-block .text-box {
     font-weight: 400;
     margin: 0; }
