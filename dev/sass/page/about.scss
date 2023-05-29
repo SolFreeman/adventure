@@ -879,6 +879,7 @@
 .search-box {
 	max-width: 375px;
 	margin: 0 auto;
+	position: relative;
 
 	.search {
 		width: 100%;
@@ -897,7 +898,23 @@
 			color: $grey;
 			font-family: $font-primary;
 		}
+	}
 
+	.suggestion-list {
+		position: absolute;
+		top: 100%;
+		background: $white;
+		padding: 10px 20px;
+		z-index: 1;
+		width: 100%;
+
+		li {
+			padding: 0;
+
+			&:before {
+				display: none;
+			}
+		}
 	}
 }
 

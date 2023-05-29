@@ -56,7 +56,6 @@ jQuery(document).ready(function ($) {
 	$(".select_single").select2({
 		theme: 'single'
 	});
-	modalOpen();
 
 	$('.form-box .text-input').on('input', function () {
 		if ($(this).val().trim() !== '') {
@@ -87,6 +86,52 @@ jQuery(document).ready(function ($) {
 		$('.choose-menu').removeClass('active');
 	});
 
+	function autocomplete() {
+		let suggestions = [];
+
+		$('.faq-list li span').each(function () {
+			suggestions.push($(this).text());
+		});
+
+		$('.search').on('input', function () {
+			let inputValue = $(this).val().toLowerCase();
+			let suggestionList = $('.suggestion-list');
+
+			if (inputValue.length >= 3) {
+				let filteredSuggestions = suggestions.filter(function (suggestion) {
+					return suggestion.toLowerCase().includes(inputValue);
+				});
+
+				let suggestionItems = filteredSuggestions.map(function (suggestion) {
+					return '<li>' + suggestion + '</li>';
+				});
+
+				suggestionList.html(suggestionItems.join(''));
+				suggestionList.show();
+			} else {
+				suggestionList.hide();
+			}
+
+			if (inputValue === '') {
+				$('.faq-list li').show();
+			}
+		});
+
+		$('.suggestion-list').on('click', 'li', function () {
+			let suggestion = $(this).text();
+			$('.search').val(suggestion);
+			$('.suggestion-list').hide();
+
+			let faqList = $('.faq-list li');
+			faqList.hide();
+			faqList.filter(function () {
+				return $(this).find('span').text() === suggestion;
+			}).show();
+		});
+	}
+
+	autocomplete();
+
 	function miniTabs() {
 		var windowWidth = $(window).width();
 		var isMobile = windowWidth <= 1024;
@@ -107,7 +152,6 @@ jQuery(document).ready(function ($) {
 					}
 				});
 
-				// Открываем первый photoBox по умолчанию
 				$('ul.mini-tabs li:first-child .photo-box').slideDown();
 			} else {
 				$('ul.mini-tabs li').off('click');
@@ -115,10 +159,8 @@ jQuery(document).ready(function ($) {
 			}
 		}
 
-		// Инициализация при загрузке страницы
 		togglePhotoBox();
 
-		// Обработчик события resize для изменения размеров окна браузера
 		$(window).resize(function () {
 			var newWindowWidth = $(window).width();
 			var newIsMobile = newWindowWidth <= 768;
@@ -144,36 +186,6 @@ jQuery(document).ready(function ($) {
 			} else {
 				mainHeader.removeClass('sticky');
 			}
-		});
-	}
-
-
-
-	function modalOpen() {
-		let overlay = $('#overlay'); // пoдлoжкa, дoлжнa быть oднa нa стрaнице
-		let open_modal = $('.open_modal'); // все ссылки, кoтoрые будут oткрывaть oкнa
-		let close = $('.modal_close, #overlay'); // все, чтo зaкрывaет мoдaльнoе oкнo, т.е. крестик и oверлэй-пoдлoжкa
-		let modal = $('.modal_div'); // все скрытые мoдaльные oкнa
-
-		open_modal.click(function (event) { // лoвим клик пo ссылке с клaссoм open_modal
-			event.preventDefault(); // вырубaем стaндaртнoе пoведение
-			let div = $(this).attr('href'); // вoзьмем стрoку с селектoрoм у кликнутoй ссылки
-			overlay.fadeIn(400, //пoкaзывaем oверлэй
-				function () { // пoсле oкoнчaния пoкaзывaния oверлэя
-					$(div) // берем стрoку с селектoрoм и делaем из нее jquery oбъект
-						.css('display', 'block')
-						.animate({ opacity: 1, top: '50%' }, 200); // плaвнo пoкaзывaем
-				});
-		});
-
-		close.click(function () { // лoвим клик пo крестику или oверлэю
-			modal // все мoдaльные oкнa
-				.animate({ opacity: 0, top: '45%' }, 200, // плaвнo прячем
-					function () { // пoсле этoгo
-						$(this).css('display', 'none');
-						overlay.fadeOut(400); // прячем пoдлoжку
-					}
-				);
 		});
 	}
 
