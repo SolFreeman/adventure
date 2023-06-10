@@ -5846,7 +5846,7 @@ span.select2-selection__clear {
     @media (min-width: 768px) {
       .choose-list .dropdown {
         font-size: 20px;
-        min-width: 272px;
+        min-width: 335px;
         max-width: 430px; } }
     .choose-list .dropdown li {
       padding: 0;
