@@ -5776,7 +5776,7 @@ span.select2-selection__clear {
   padding: 20px 0 100px; }
   @media (min-width: 768px) {
     .choose-city {
-      padding: 30px 130px; } }
+      padding: 30px 0 130px; } }
 
 .choose-list {
   display: flex;
