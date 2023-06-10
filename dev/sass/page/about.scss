@@ -1179,12 +1179,13 @@
 		}
 
 		&:first-child {
-			
+
 			@include media('>=desktop') {
 				span {
 					background: $green-hover;
 					color: $secondary-color;
 				}
+
 				.photo-box {
 					opacity: 1;
 					visibility: visible;
@@ -1192,7 +1193,7 @@
 				}
 			}
 		}
-		
+
 
 		@include media('>=desktop') {
 			font-size: 24px;
@@ -1544,5 +1545,130 @@
 		margin-right: 20px;
 		color: $white;
 		font-weight: 400;
+	}
+}
+
+/* choose a city(catalog) */
+
+.choose-city {
+	padding: 20px 0 100px;
+
+	@include media('>=tablet') {
+		padding: 30px 130px;
+	}
+}
+
+.choose-list {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -30px;
+	flex-direction: column;
+	align-items: center;
+
+	@include media('>=tablet') {
+		flex-direction: row;
+	}
+
+	&>li {
+		margin: 0 0 30px;
+		border-radius: 35px;
+		font-size: 24px;
+		padding: 0;
+		font-weight: 600;
+		color: $grey;
+		position: relative;
+		cursor: pointer;
+		max-width: 375px;
+		width: 100%;
+
+		span {
+			padding: 17px 35px;
+			display: flex;
+			align-items: center;
+			border-radius: 35px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+			
+			&:after {
+				font-family: 'icomoon';
+				content: '\e910';
+				margin-left: 24px;
+				color: $tertiary-color;
+				font-size: 12px;
+				transition: all .2s ease-in-out;
+			}
+		}
+
+		&:before {
+			display: none;
+		}
+
+
+		@include media('>=tablet') {
+			margin: 0 30px 30px;
+			max-width: 100%;
+			width: auto;
+
+			&:hover {
+				.dropholder {
+					visibility: visible;
+					opacity: 1;
+				}
+
+				span{
+					&:after {
+						transform: rotate(180deg);
+					}
+				}
+			}
+		}
+	}
+
+	.dropholder {
+		top: 100%;
+		left: 0;
+		padding-top: 8px;
+		z-index: 1;
+		width: 100%;
+		transition: all .2s ease-in-out;
+		
+		@include media('>=tablet') {
+			position: absolute;
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+	.dropdown {
+		background: $white;
+		border: 2px dashed #6B7A8F;
+		border-radius: 35px;
+		font-size: 16px;
+		font-weight: 400;
+		padding: 20px 35px 0px;
+		width: 100%;
+
+		@include media('>=tablet') {
+			font-size: 20px;
+			min-width: 272px;
+			max-width: 430px;
+		}
+
+		li {
+			padding: 0;
+			margin-bottom: 20px;
+
+			&:before {
+				display: none;
+			}
+		}
+
+		a {
+			color: $secondary-color;
+			text-decoration: none;
+
+			&:hover {
+				color: $tertiary-color;
+			}
+		}
 	}
 }
