@@ -5831,9 +5831,6 @@ span.select2-selection__clear {
     margin: 0; }
     .choose-city.secrets .container {
       padding: 0 15px; }
-      @media (min-width: 768px) {
-        .choose-city.secrets .container {
-          padding: 0; } }
     .choose-city.secrets .slide {
       margin: 44px 0 0; }
       .choose-city.secrets .slide:nth-child(3n+2) {
@@ -5848,7 +5845,7 @@ span.select2-selection__clear {
       margin: 0 0 20px; }
       @media (min-width: 768px) {
         .choose-city.secrets .secrets-slider {
-          margin: 0 -15px 85px; } }
+          margin: 0 -26px 85px; } }
   .choose-city h3 {
     text-align: left;
     color: #6B7A8F;
