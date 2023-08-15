@@ -16,14 +16,6 @@ $(window).on('load resize', function () {
 			arrows: false
 		});
 
-		// $('.search-list:not(.slick-initialized)').slick({
-		// 	dots: true,
-		// 	infinite: true,
-		// 	speed: 200,
-		// 	slidesToShow: 1,
-		// 	arrows: false
-		// });
-
 	} else {
 		$(".js-secrets-slider.slick-initialized").slick("unslick");
 		$(".review-slider.slick-initialized").slick("unslick");
@@ -33,19 +25,14 @@ $(window).on('load resize', function () {
 	if ($(window).width() < 1340) {
 		openPro();
 	}
+
 });
 
 jQuery(document).ready(function ($) {
 	faqAccordeon();
 	$(".fancybox").fancybox();
 	openDropdown();
-	addClass();
 
-	$(window).on('beforeunload', function () {
-		if ($(window).scrollTop() === 0) {
-			$('.main-header').removeClass('sticky');
-		}
-	});
 	$(".js-select2").select2({
 		closeOnSelect: false,
 		placeholder: "Комплектація",
@@ -174,20 +161,7 @@ jQuery(document).ready(function ($) {
 
 	miniTabs();
 
-	function addClass() {
-		var mainHeader = $('.main-header');
-		var headerOffset = mainHeader.offset().top;
 
-		$(window).on('load scroll', function () {
-			var scrollTop = $(window).scrollTop();
-
-			if (scrollTop >= headerOffset) {
-				mainHeader.addClass('sticky');
-			} else {
-				mainHeader.removeClass('sticky');
-			}
-		});
-	}
 
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 50) {
@@ -337,6 +311,12 @@ jQuery(document).ready(function ($) {
 	document.addEventListener('aos:out', ({ detail }) => {
 		console.log('animated out', detail);
 	});
+
+	$('.content iframe').each(function() {
+        var iframeWrapper = $('<div class="video-area"><div class="video-holder"></div></div>');
+
+        $(this).wrap(iframeWrapper);
+    });
 });
 
 
@@ -393,3 +373,5 @@ function faqAccordeon() {
 		});
 	});
 }
+
+
