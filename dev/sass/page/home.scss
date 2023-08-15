@@ -448,6 +448,7 @@
 	padding-left: 22px;
 	transition: all .2s ease-in-out;
 	display: none;
+	z-index: 12;
 
 	@include media('>=tablet') {
 		top: 50%;
@@ -953,6 +954,11 @@
 
 	h3 {
 		margin: 0;
+		font-size: 16px;
+
+		@include media('>=tablet') {
+			font-size: 24px;
+		}
 	}
 
 	.label {
@@ -1219,7 +1225,7 @@
 		}
 	}
 
-	.photo-box {
+	.photo-block {
 		width: 80px;
 		height: 80px;
 		padding: 2px;
@@ -1228,6 +1234,11 @@
 		box-shadow: 0 1px 10px 2px rgba(0, 0, 0, .2);
 		margin-bottom: 20px;
 		border-radius: 50%;
+		overflow: hidden;
+
+		img {
+			border-radius: 50%;
+		}
 
 		@include media('>=tablet') {
 			width: 108px;
@@ -2410,6 +2421,10 @@ span.select2-selection__clear {
 		z-index: -1;
 	}
 
+	h2 {
+		padding: 0 15px;
+	}
+
 	@include media('>=tablet') {
 		margin-bottom: 80px;
 
@@ -2528,7 +2543,7 @@ span.select2-selection__clear {
 	}
 
 	h2 {
-		margin: 0 auto 40px;
+		margin: 0 auto 20px;
 		padding: 0 15px;
 	}
 
@@ -2538,13 +2553,14 @@ span.select2-selection__clear {
 
 	.text-holder {
 		font-size: 14px;
-		font-weight: 600;
+		font-weight: 400;
 		text-align: center;
 		max-width: 750px;
 		margin: 0 auto 40px;
 
 		@include media('>=tablet') {
 			font-size: 24px;
+			font-weight: 600;
 		}
 	}
 
@@ -2700,10 +2716,19 @@ span.select2-selection__clear {
 		color: $tertiary-color;
 		margin-bottom: 15px;
 		font-weight: 500;
-		font-size: 12px;
+		font-size: 14px;
+
+		a {
+			color: $tertiary-color !important;
+			font-size: 14px;
+		}
 
 		@include media('>=tablet') {
 			font-size: 16px;
+
+			a {
+				font-size: 16px;
+			}
 		}
 	}
 

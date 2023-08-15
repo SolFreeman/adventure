@@ -229,26 +229,30 @@ img {
 /*3*/
 
 ol {
-	margin: 0;
+	margin: 0 0 0 16px;
 	padding: 0;
-	counter-reset: li;
+	// counter-reset: li;
 
 	li {
-		list-style: none;
+		// list-style: none;
 		list-style-position: outside;
 		position: relative;
-		padding-left: 36px;
+		padding-left: 26px;
 		margin-bottom: 18px;
 
-		&:before {
-			content: counter(li, decimal) ".";
-			counter-increment: li;
-			margin-left: 0;
-			margin-right: 0;
+		// &:before {
+		// 	content: counter(li, decimal) ".";
+		// 	counter-increment: li;
+		// 	margin-left: 0;
+		// 	margin-right: 0;
+		// 	color: $tertiary-color;
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0
+		// }
+
+		&::marker {
 			color: $tertiary-color;
-			position: absolute;
-			top: 0;
-			left: 0
 		}
 	}
 }
@@ -591,26 +595,6 @@ input:checked+label {
 	width: 0px;
 }
 
-/*14*/
-/*15*/
-/*16*/
-/*17*/
-/*18*/
-.breadcrumb {
-	font-size: 14px;
-	color: $breadcrumbs-last-child;
-	font-weight: 500;
-
-	a {
-		text-decoration: none;
-		color: $breadcrumbs-link;
-
-		&:hover {
-			color: $breadcrumbs-link-hover;
-		}
-	}
-}
-
 .social-list {
 	display: flex;
 	align-items: center;
@@ -794,21 +778,21 @@ input:checked+label {
 	}
 }
 
-.section {
-	padding: 80px 0;
+// .section {
+// 	padding: 80px 0;
 
-	@include media('>=tablet') {
-		padding: 130px 0;
-	}
+// 	@include media('>=tablet') {
+// 		padding: 130px 0;
+// 	}
 
-	&_sm {
-		padding: 40px 0 80px;
+// 	&_sm {
+// 		padding: 40px 0 80px;
 
-		@include media('>=tablet') {
-			padding: 21px 0 130px;
-		}
-	}
-}
+// 		@include media('>=tablet') {
+// 			padding: 21px 0 130px;
+// 		}
+// 	}
+// }
 
 .btn-holder {
 	text-align: center;
@@ -817,9 +801,11 @@ input:checked+label {
 .breadcrumbs-holder {
 	padding: 0 15px;
 	margin-top: 20px;
+	margin-bottom: 40px;
 
 	@include media('>=tablet') {
 		margin-top: 0;
+		margin-bottom: 80px;
 	}
 }
 
@@ -827,6 +813,7 @@ input:checked+label {
 	padding: 20px 0;
 	max-width: 1360px;
 	margin: 0 auto;
+	font-size: 16px;
 
 	@include media('>=tablet') {
 		padding: 40px 0;
@@ -849,4 +836,8 @@ input:checked+label {
 
 .align-center {
 	text-align: center;
+}
+
+.grecaptcha-badge {
+	display: none;
 }

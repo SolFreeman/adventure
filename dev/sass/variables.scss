@@ -36,9 +36,6 @@ $bg-style-item: linear-gradient(90deg, #F5F5F5 0%, #F5F5F5 104.65%);
 $bg-modal: #F4F1E7;
 $bg-footer: linear-gradient(90deg, #003800 0%, #006F00 50.26%, #003800 100%);
 
-
-
-/*grey*/
 $label-red: #F93838;
 $label-purpur: #8683EF;
 $label-green: #70D61F;
@@ -46,13 +43,11 @@ $label-green: #70D61F;
 $required: $primary-color;
 $placeholder: #bdbdbd;
 
-/*   <Breadcrumbs/>   */
 $breadcrumbs-slash: $secondary-color;
 $breadcrumbs-link: $tertiary-color;
 $breadcrumbs-link-hover: $primary-color;
 $breadcrumbs-last-child: #B2B1B1;
 
-/*   <Muve-top/>   */
 $muve-top-background: $primary-color;
 $muve-top-color: #fff;
 
@@ -61,5 +56,4 @@ $muve-top-color: #fff;
     background: -moz-linear-gradient(-45deg,  rgba(125,244,205,1) 0%, rgba(254,178,0,1) 65%, rgba(255,126,0,1) 100%);
     background: -webkit-linear-gradient(-45deg,  rgba(125,244,205,1) 0%,rgba(254,178,0,1) 65%,rgba(255,126,0,1) 100%);
     background: linear-gradient(135deg,  rgba(125,244,205,1) 0%,rgba(254,178,0,1) 65%,rgba(255,126,0,1) 100%);
-
 }
