@@ -1,6 +1,6 @@
 .markup {
 	padding-top: 50px;
-	
+
 	.row {
 		display: flex;
 		flex-wrap: wrap;
@@ -89,6 +89,10 @@
 			background: radial-gradient(red, transparent);
 		}
 	}
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -278,8 +282,12 @@ ul {
 			width: 10px;
 			height: 10px;
 			left: 0;
-			top: 8px;
+			top: 6px;
 			display: inline-block;
+
+			@include media('>=1024px') {
+				top: 10px;
+			}
 		}
 	}
 }
@@ -292,7 +300,7 @@ dl {
 		font-weight: 600;
 		margin-bottom: 16px;
 	}
-	
+
 	dd {
 		padding: 0;
 		margin: 0 0 24px;
@@ -401,8 +409,6 @@ input[type="radio"] {
 	}
 }
 
-
-
 input[type="radio"]+label:before {
 	border-radius: 50%;
 }
@@ -475,6 +481,7 @@ input:checked+label {
 	background: $white;
 	color: $secondary-color;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.23);
+	border: 2px solid $secondary-color;
 
 	&:hover {
 		color: $primary-color;
@@ -618,7 +625,7 @@ input:checked+label {
 			height: 60px;
 			line-height: 67px;
 		}
-		
+
 
 		&:first-child {
 			margin-left: 0;
@@ -778,22 +785,6 @@ input:checked+label {
 	}
 }
 
-// .section {
-// 	padding: 80px 0;
-
-// 	@include media('>=tablet') {
-// 		padding: 130px 0;
-// 	}
-
-// 	&_sm {
-// 		padding: 40px 0 80px;
-
-// 		@include media('>=tablet') {
-// 			padding: 21px 0 130px;
-// 		}
-// 	}
-// }
-
 .btn-holder {
 	text-align: center;
 }
@@ -828,7 +819,7 @@ input:checked+label {
 			color: $primary-color;
 		}
 
-		& + span {
+		&+span {
 			margin-left: 0;
 		}
 	}

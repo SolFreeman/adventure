@@ -280,7 +280,6 @@
 		background: -moz-linear-gradient(left, rgba(255, 134, 0, 1) 0%, rgba(125, 244, 205, 1) 100%);
 		background: -webkit-linear-gradient(left, rgba(255, 134, 0, 1) 0%, rgba(125, 244, 205, 1) 100%);
 		background: linear-gradient(to right, rgba(255, 134, 0, 1) 0%, rgba(125, 244, 205, 1) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8600', endColorstr='#7df4cd', GradientType=1);
 	}
 
 	span {
@@ -344,7 +343,11 @@
 
 		@include media('>=tablet') {
 			font-size: 16px;
-			padding: 17px 26px;
+			padding: 17px 24px;
+		}
+
+		i {
+			margin-left: 15px;
 		}
 	}
 
@@ -408,7 +411,7 @@
 	padding: 10px 0;
 	margin-bottom: 5px;
 
-	@include media('>=tablet') {
+	@include media('>=1340px') {
 		margin:0;
 	}
 
@@ -439,12 +442,12 @@
 			transform: rotate(45deg);
 			transition: border .15s ease-in-out;
 
-			@include media('>=tablet') {
+			@include media('>=1340px') {
 				border-color: $grey-dark;
 			}
 		}
 
-		@include media('>=tablet') {
+		@include media('>=1340px') {
 			color: $grey;
 			font-size: 16px;
 			font-weight: 500;
@@ -458,7 +461,7 @@
 		display: flex;
 		flex-direction: column;
 
-		@include media('>=tablet') {
+		@include media('>=1340px') {
 			padding: 40px 15px;
 			flex-direction: row;
 		}
@@ -466,14 +469,14 @@
 		.col {
 			width: 100%;
 
-			@include media('>=tablet') {
+			@include media('>=1340px') {
 				width: 50%;
 			}
 		}
 
 		.country-col {
-			@include media('>=tablet') {
-				column-count: 2;
+			@include media('>=1340px') {
+				// column-count: 2;
 			}
 		}
 
@@ -487,7 +490,7 @@
 		.banner-col {
 			display: none;
 
-			@include media('>=tablet') {
+			@include media('>=1340px') {
 				display: flex;
 				justify-content: end;
 				font-size: 24px;
@@ -507,7 +510,7 @@
 		max-height: 0;
 		overflow: hidden;
 			
-		@include media('>=tablet') {
+		@include media('>=1340px') {
 			box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.12);
 			visibility: hidden;
 			opacity: 0;
@@ -545,7 +548,7 @@
 		display: block;
 		margin-bottom: 8px;
 
-		@include media('>=tablet') {
+		@include media('>=1340px') {
 			color: $grey;
 			font-size: 24px;
 			margin-bottom: 24px;
@@ -557,7 +560,7 @@
 		margin-bottom: 16px;
 		font-weight: 600;
 
-		@include media('>=tablet') {
+		@include media('>=1340px') {
 			font-size: 16px;
 			margin-bottom: 32px;
 		}
@@ -566,14 +569,14 @@
 			padding-left: 0;
 			margin-bottom: 8px;
 
-			@include media('>=tablet') {
+			@include media('>=1340px') {
 				margin-bottom: 16px;
 			}
 
 			a {
 				color: $white;
 
-				@include media('>=tablet') {
+				@include media('>=1340px') {
 					color: $grey-dark;
 				}
 
@@ -731,13 +734,19 @@
 			}
 		}
 
+		&.active {
+			&>a {
+				color: $primary-color;
+			}
+		}
+
 	}
 
 	a {
 		color: $white;
 		transition: color .2s ease-in-out;
 
-		@include media('>=tablet') {
+		@include media('>=1340px') {
 			color: $grey;
 			font-weight: 500;
 		}
@@ -797,54 +806,6 @@
 
 			@include media('>=1340px') {
 				color: $tertiary-color;
-			}
-		}
-	}
-}
-
-.header-socials {
-	display: flex;
-	padding-top: 35px;
-
-	@include media('>=1340px') {
-		order: 3;
-		padding-top: 0;
-	}
-
-	li {
-		margin-right: 50px;
-
-		@include media('>=1340px') {
-			border-left: 1px solid #fff;
-			margin-right: 0;
-		}
-
-		&:last-child {
-			margin-right: 0;
-		}
-	}
-
-	a {
-		display: flex;
-		transition: all ease-in-out 0.3s;
-		color: white;
-		text-align: center;
-
-		@include media('>=1340px') {
-			height: 112px;
-			width: 80px;
-			background-color: #F7F6F8;
-			color: $color;
-			justify-content: center;
-			align-items: center;
-		}
-
-		&:hover {
-			color: $primary-color;
-
-			@include media('>=1340px') {
-				color: white;
-				background-color: $primary-color;
 			}
 		}
 	}
@@ -918,61 +879,5 @@
 		right: 0;
 		transform: translateY(-50%);
 		font-size: 8px;
-	}
-}
-
-.user-info-list {
-	position: absolute;
-	top: calc(100% + 13px);
-	right: 0;
-	opacity: 0;
-	visibility: hidden;
-	transition: all ease-in-out 0.3s;
-	background-color: #1F232B;
-	width: 286px;
-	z-index: 10;
-
-	&.active {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	li {
-		&.ladies-first-item {
-			border-top: 1px solid #fff;
-		}
-
-		&.ladies-last-item {
-			border-bottom: 1px solid #fff;
-		}
-
-		&:after {
-			display: none;
-		}
-
-		a {
-			display: block;
-			padding: 16px 31px 15px 66px;
-			position: relative;
-			color: #fff;
-			transition: background-color;
-			text-align: left;
-			font-weight: 500;
-			font-size: 15px;
-			line-height: 17px;
-
-			&:hover {
-				background-color: #B09762;
-				color: #fff;
-			}
-
-			i {
-				position: absolute;
-				top: 50%;
-				left: 31px;
-				transform: translateY(-50%);
-				font-size: 17px;
-			}
-		}
 	}
 }
