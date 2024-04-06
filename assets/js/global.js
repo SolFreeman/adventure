@@ -30,7 +30,6 @@ $(window).on('load resize', function () {
 
 jQuery(document).ready(function ($) {
 	faqAccordeon();
-	$(".fancybox").fancybox();
 	openDropdown();
 
 	$(".js-select2").select2({
@@ -176,7 +175,7 @@ jQuery(document).ready(function ($) {
 			var top = $(".thetop").offset().top;
 			$('html, body').animate({
 				scrollTop: top
-			}, 3000, 'easeOutExpo');
+			}, 1000, 'easeOutExpo');
 			return false
 		})
 	})
@@ -312,12 +311,41 @@ jQuery(document).ready(function ($) {
 		console.log('animated out', detail);
 	});
 
-	$('.content iframe').each(function() {
-        var iframeWrapper = $('<div class="video-area"><div class="video-holder"></div></div>');
+	$('.content iframe').each(function () {
+		let iframeWrapper = $('<div class="video-area"><div class="video-holder"></div></div>');
 
-        $(this).wrap(iframeWrapper);
-    });
+		$(this).wrap(iframeWrapper);
+	});
+
+	animateBlock();
 });
+
+function animateBlock() {
+	let animatedElements = $(".animate-fade-up");
+
+	function checkVisibility() {
+		let scroll = $(window).scrollTop();
+		let windowHeight = $(window).height();
+
+		animatedElements.each(function () {
+			let elementTop = $(this).offset().top;
+			let elementBottom = elementTop + $(this).outerHeight();
+
+			if (elementTop <= scroll + windowHeight && elementBottom > scroll) {
+				$(this).addClass("active");
+			} else if (elementTop < scroll + windowHeight) {
+			} else {
+				$(this).removeClass("active");
+			}
+		});
+	}
+
+	checkVisibility();
+
+	$(window).scroll(function () {
+		checkVisibility();
+	});
+}
 
 
 function openDropdown() {
